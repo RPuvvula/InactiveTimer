@@ -93,7 +93,7 @@ function checkNotificationPromise() {
 function createNotification(message) {
 
     // Create and show the notification
-    let img = 'images\clock.ico';
+    let img = 'images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
 }
 
