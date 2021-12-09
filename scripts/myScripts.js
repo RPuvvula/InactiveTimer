@@ -90,12 +90,11 @@ function checkNotificationPromise() {
     return true;
 }
 
-function createNotification(title) {
+function createNotification(message) {
 
     // Create and show the notification
-    let img = '';
-    //let text = 'HEY! Your task "' + title + '" is now overdue.';
-    let notification = new Notification('Inactive Timer', { body: title, icon: img });
+    let img = 'images\clock.ico';
+    let notification = new Notification('Inactive Timer', { body: message, icon: img });
 }
 
 function shownotification(message) {
