@@ -13,20 +13,25 @@ function setOutput(outputString) {
 }
 
 function startTimer() {
+    console.log(currentDateTime());
     startCountdown();
 
     timeoutId = setInterval(() => {
         stopAllTimers(false);
         shownotification("Hey buddy!\nTime to get up and get moving!");
         startTimer();
-    }, nInterval * 1000); // 5 seconds
+        console.log(currentDateTime());
+    }, nInterval * 1000);
 }
 
+function currentDateTime() {
+    var objToday = new Date();
+    return objToday.toLocaleDateString() + ' ' + objToday.toLocaleTimeString();
+}
 function startCountdown() {
     countdownId = setInterval(() => {
-        const myDate = new Date();
         //TODO Change following to how much time left before next reminder
-        setOutput(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds());
+        setOutput(currentDateTime());
     }, 1000); //every second
 }
 
