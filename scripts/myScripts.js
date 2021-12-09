@@ -3,8 +3,6 @@ let countdownId;
 const nInterval = 5; //interval time in seconds
 
 const notificationBtn = document.getElementById('authorize');
-// wire up notification permission functionality to "Enable notifications" button
-//notificationBtn.addEventListener('click', askNotificationPermission);
 
 function resetOutput() {
     setOutput("Timer has been reset!");
@@ -15,7 +13,7 @@ function setOutput(outputString) {
 }
 
 function startTimer() {
-    showCountdown();
+    startCountdown();
 
     timeoutId = setInterval(() => {
         stopAllTimers(false);
@@ -24,7 +22,7 @@ function startTimer() {
     }, nInterval * 1000); // 5 seconds
 }
 
-function showCountdown() {
+function startCountdown() {
     countdownId = setInterval(() => {
         const myDate = new Date();
 
@@ -106,6 +104,6 @@ function shownotification(message) {
     }
     else
     {
-        showAlert("No notification permission given, showing alert instead!\n" + message);
+        showAlert(`No notification permission given, showing Window alert instead!\n${message}`);
     }
 }
