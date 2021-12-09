@@ -4,7 +4,7 @@ This simple Project alerts you once every 30 mins to get up from your desk and m
 
 The project uses Notifications API (HTML 5) to alert the User thus requires to be running under server. You can still use & run as local file but Window's alerts will be used instead.
 
-- Host the files on a server or use Node.js to run them locally (instructions below)
+- Host the files on a server or use Node.js to run them locally (instructions below). [More info on http-server](https://www.npmjs.com/package/http-server)
   - 1> Have Node.js installed in your system.
   - 2> In CMD, run the command **npm install http-server -g**
   - 3> Navigate to the specific path of your file folder in CMD and run the command **http-server**
