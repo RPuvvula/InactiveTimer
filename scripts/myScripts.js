@@ -1,6 +1,6 @@
 let timeoutId;
 let countdownId;
-const nInterval = 5; //interval time in seconds
+const nInterval = 60 * 30; //interval time in seconds
 
 const notificationBtn = document.getElementById('authorize');
 
@@ -25,7 +25,7 @@ function startTimer() {
 function startCountdown() {
     countdownId = setInterval(() => {
         const myDate = new Date();
-
+        //TODO Change following to how much time left before next reminder
         setOutput(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds());
     }, 1000); //every second
 }
@@ -93,7 +93,7 @@ function checkNotificationPromise() {
 function createNotification(message) {
 
     // Create and show the notification
-    let img = 'images/clock.ico';
+    let img = '../images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
 }
 
