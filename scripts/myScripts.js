@@ -107,15 +107,14 @@ function createNotification(message) {
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
     //TODO throws an error (see console)
     var ms = 15000; // close notification after 15 sec
-    notification.onshow = function() {setTimeout(notification.close, ms)};
+    notification.onshow = function () { setTimeout(notification.close, ms); }
 }
 
 function shownotification(message) {
     if (Notification.permission === 'granted') {
         createNotification(message);
     }
-    else
-    {
+    else {
         showAlert(`No notification permission given, showing Window alert instead!\n${message}`);
     }
 }
