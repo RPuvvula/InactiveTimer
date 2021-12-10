@@ -11,7 +11,6 @@ function setOutput(outputString) {
 }
 
 function startTimer() {
-    writeToLog('Timer (re)started on');
     startCountdown();
 
     timeoutId = setInterval(() => {
@@ -20,6 +19,8 @@ function startTimer() {
         shownotification("Hey buddy!\nTime to get up and get moving!");
         startTimer();
     }, nInterval * 1000);
+
+    writeToLog('Timer (re)started on');
 }
 
 function writeToLog(prefix) {
@@ -44,8 +45,8 @@ function stopAllTimers(resetTextOutput = true) {
 
     if (resetTextOutput) {
         setOutput("Timer stopped!");
+        writeToLog("Timer stopped on");
     }
-    writeToLog("Timer stopped on");
 }
 
 function stopCountDown() {
@@ -104,7 +105,7 @@ function createNotification(message) {
     // Create and show the notification
     let img = '../images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
-
+    //TODO throws an error (see console)
     var ms = 15000; // close notification after 15 sec
     notification.onshow = function() {setTimeout(notification.close, ms)};
 }
