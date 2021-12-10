@@ -106,7 +106,7 @@ function createNotification(message) {
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
 
     var ms = 15000; // close notification after 15 sec
-    notification.onshow = () => {setTimeout(notification.close, ms)};
+    notification.onshow = function() {setTimeout(notification.close, ms)};
 }
 
 function shownotification(message) {
