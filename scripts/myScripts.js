@@ -11,7 +11,7 @@ function setOutput(outputString) {
 }
 
 function startTimer() {
-    writeToLog('Timer started on');
+    writeToLog('Timer (re)started on');
     startCountdown();
 
     timeoutId = setInterval(() => {
