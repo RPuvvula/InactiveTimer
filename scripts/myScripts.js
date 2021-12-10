@@ -2,8 +2,6 @@ let timeoutId;
 let countdownId;
 const nInterval = 60 * 30; //interval time in seconds
 
-const notificationBtn = document.getElementById('authorize');
-
 function resetOutput() {
     setOutput("Timer has been reset!");
 }
@@ -13,17 +11,22 @@ function setOutput(outputString) {
 }
 
 function startTimer() {
-    console.log(currentDateTime());
+    writeToLog('Timer started on');
     startCountdown();
 
     timeoutId = setInterval(() => {
         stopAllTimers(false);
+        writeToLog('Shown alert on');
         shownotification("Hey buddy!\nTime to get up and get moving!");
         startTimer();
-        console.log(currentDateTime());
     }, nInterval * 1000);
 }
 
+function writeToLog(prefix) {
+    const logConsole = document.getElementById('output');
+    logConsole.innerHTML += (`\n${prefix} ${currentDateTime()}`);
+    logConsole.scrollTop = console.scrollHeight;
+}
 function currentDateTime() {
     var objToday = new Date();
     return objToday.toLocaleDateString() + ' ' + objToday.toLocaleTimeString();
@@ -42,6 +45,7 @@ function stopAllTimers(resetTextOutput = true) {
     if (resetTextOutput) {
         setOutput("Timer stopped!");
     }
+    writeToLog("Timer stopped on");
 }
 
 function stopCountDown() {
@@ -100,6 +104,9 @@ function createNotification(message) {
     // Create and show the notification
     let img = '../images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
+
+    var ms = 15000; // close notification after 15 sec
+    notification.onshow = () => {setTimeout(notification.close, ms)};
 }
 
 function shownotification(message) {
