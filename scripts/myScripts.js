@@ -13,12 +13,12 @@ function startTimer() {
 
     timeoutId = setInterval(() => {
         stopAllTimers(false);
-        writeToLog('Shown alert on');
-        shownotification("Hey buddy!\nTime to get up and get moving!");
+        writeToOutputConsole('Shown alert on');
+        shownotification("Hey buddy!\nTime to get up and get moving for 2-3 minutes!");
         startTimer();
     }, nInterval * 1000);
 
-    writeToLog('Timer (re)started on');
+    writeToOutputConsole('Timer (re)started on');
 }
 
 function dateAdd(nSeconds) {
@@ -27,7 +27,7 @@ function dateAdd(nSeconds) {
     return d1;
 }
 
-function writeToLog(prefix) {
+function writeToOutputConsole(prefix) {
     const logConsole = document.getElementById('output');
     logConsole.innerHTML += (`\n${prefix} ${currentDateTime()}`);
     logConsole.scrollTop = console.scrollHeight;
@@ -51,7 +51,7 @@ function stopAllTimers(resetTextOutput = true) {
 
     if (resetTextOutput) {
         setOutput("Timer stopped!");
-        writeToLog("Timer stopped on");
+        writeToOutputConsole("Timer stopped on");
     }
 }
 
