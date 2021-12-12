@@ -111,9 +111,6 @@ function createNotification(message) {
     // Create and show the notification
     let img = '../images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
-    //TODO throws an error (see console)
-    var ms = 15000; // close notification after 15 sec
-    notification.onshow = function () { setTimeout(notification.close, ms); }
 }
 
 function shownotification(message) {
