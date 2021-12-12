@@ -90,6 +90,7 @@ function askNotificationPermission() {
             });
         }
     }
+    shownotification(`Permission ${Notification.permission}`);
 }
 
 // Function to check whether browser supports the promise version of requestPermission()
