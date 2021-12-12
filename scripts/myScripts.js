@@ -1,16 +1,14 @@
 let timeoutId;
 let countdownId;
+let nextAlertAt;
 const nInterval = 60 * 30; //interval time in seconds
-
-function resetOutput() {
-    setOutput("Timer has been reset!");
-}
 
 function setOutput(outputString) {
     document.querySelector('#timeroutput').textContent = outputString;
 }
 
 function startTimer() {
+    nextAlertAt = dateAdd(nInterval);
     startCountdown();
 
     timeoutId = setInterval(() => {
@@ -23,19 +21,26 @@ function startTimer() {
     writeToLog('Timer (re)started on');
 }
 
+function dateAdd(nSeconds) {
+    var d1 = new Date();
+    d1.setSeconds(d1.getSeconds() + nSeconds);
+    return d1;
+}
+
 function writeToLog(prefix) {
     const logConsole = document.getElementById('output');
     logConsole.innerHTML += (`\n${prefix} ${currentDateTime()}`);
     logConsole.scrollTop = console.scrollHeight;
 }
+
 function currentDateTime() {
     var objToday = new Date();
     return objToday.toLocaleDateString() + ' ' + objToday.toLocaleTimeString();
 }
+
 function startCountdown() {
     countdownId = setInterval(() => {
-        //TODO Change following to how much time left before next reminder
-        setOutput(currentDateTime());
+        setOutput(`Next alert in ${Math.floor(Math.floor((nextAlertAt - Date.now()) / 1000) / 60)} minutes at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
     }, 1000); //every second
 }
 
