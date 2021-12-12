@@ -40,7 +40,7 @@ function currentDateTime() {
 
 function startCountdown() {
     countdownId = setInterval(() => {
-        setOutput(`Next alert in ${Math.floor(Math.floor((nextAlertAt - Date.now()) / 1000) / 60)} minutes at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
+        setOutput(`Next alert in ${Math.floor(Math.floor((nextAlertAt - Date.now()) / 1000) / 60) + 1} minute(s) at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
     }, 1000); //every second
 }
 
@@ -107,7 +107,6 @@ function checkNotificationPromise() {
 }
 
 function createNotification(message) {
-
     // Create and show the notification
     let img = '../images/clock.ico';
     let notification = new Notification('Inactive Timer', { body: message, icon: img });
