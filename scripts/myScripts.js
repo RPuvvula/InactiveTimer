@@ -40,7 +40,8 @@ function currentDateTime() {
 
 function startCountdown() {
     countdownId = setInterval(() => {
-        setOutput(`Next alert in ${Math.floor(Math.floor((nextAlertAt - Date.now()) / 1000) / 60) + 1} minute(s) at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
+        var datediff = new Date(nextAlertAt - Date.now());
+        setOutput(`Next alert in ${datediff.getMinutes()}:${datediff.getSeconds()} seconds at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
     }, 1000); //every second
 }
 
