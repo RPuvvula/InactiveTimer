@@ -1,10 +1,10 @@
 # InactiveTimer
 
-Sitting too long at Desk? This simple Project alerts you once every 30 mins to get up from your chair and move.
+Do you spend too much time at your desk? This simple Project reminds you to get out of your chair and move every 30 minutes.
 
-I am new to web development and thought why not develop a tool that is useful. I use this everyday.
+I'm new to web development, so I made this to teach myself while also being useful. I use it everyday at work!
 
-The project uses Notifications API (HTML 5) to alert the User thus requires to be running under server. You can still use & run as local file but Window's alerts will be used instead.
+The project uses the Notifications API (HTML 5) to alert the user, so it must be running on a server. You can continue to use and run as a local file, but Windows' alerts will be used instead.
 
 ## How to launch
 You have two options
