@@ -27,9 +27,18 @@ function dateAdd(nSeconds) {
     return d1;
 }
 
-function writeToOutputConsole(prefix) {
+function clearOutput() {
+    writeToOutputConsole("Output cleared", true);
+}
+
+function writeToOutputConsole(prefix, clearOutput = false) {
     const logConsole = document.getElementById('output');
-    logConsole.innerHTML += (`\n${prefix} ${currentDateTime()}`);
+    if (clearOutput) {
+        logConsole.innerHTML = (`${prefix} on ${currentDateTime()}`);
+    }
+    else {
+        logConsole.innerHTML += (`\n${prefix} ${currentDateTime()}`);
+    }
     logConsole.scrollTop = console.scrollHeight;
 }
 
