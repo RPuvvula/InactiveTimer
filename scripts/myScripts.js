@@ -81,8 +81,8 @@ function askNotificationPermission() {
             Notification.permission = permission;
         }
 
-        // set the button to shown or hidden, depending on what the user answers
-        //show some error?
+        // set the button to shown or hidden, depending on what the user answers, here showing a notification
+        shownotification(`Permission ${Notification.permission}`);
     }
 
     // Let's check if the browser supports notifications
@@ -100,7 +100,6 @@ function askNotificationPermission() {
             });
         }
     }
-    shownotification(`Permission ${Notification.permission}`);
 }
 
 // Function to check whether browser supports the promise version of requestPermission()
