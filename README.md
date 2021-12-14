@@ -6,6 +6,9 @@ I am new to web development and thought why not develop a tool that is useful. I
 
 The project uses Notifications API (HTML 5) to alert the User thus requires to be running under server. You can still use & run as local file but Window's alerts will be used instead.
 
+## How to launch
+You have two options
+- Launch [Github page](https://rpuvvula.github.io/InactiveTimer/) OR,
 - Host the files on a server or use Node.js to run them locally (instructions below). [More info on http-server](https://www.npmjs.com/package/http-server)
   - 1> Have Node.js installed in your system.
   - 2> In CMD, run the command **npm install http-server -g**
