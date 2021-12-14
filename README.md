@@ -15,3 +15,6 @@ The project uses Notifications API (HTML 5) to alert the User thus requires to b
 ## How to use
 - Firstly, enable notifications by clicking Enable Notifications button
 - and, Click start timer to get the timer going. That's it! It reminds you once every 30 minutes to get up
+
+## Ideas
+Do you have any suggestions and/or improvements to this tool? Let me know.
