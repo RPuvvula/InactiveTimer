@@ -33,7 +33,7 @@ function clearOutput() {
 
 function writeToOutputConsole(prefix, clearOutput = false) {
     const logConsole = document.getElementById('output');
-    if (clearOutput) {
+    if (clearOutput || logConsole.textLength < 1) {
         logConsole.innerHTML = (`${prefix} on ${currentDateTime()}`);
     }
     else {
