@@ -28,3 +28,7 @@ input  {
 	font-weight:700;
 	letter-spacing: .1em;
 }
+
+pre {
+    font-weight: 1000;
+}
