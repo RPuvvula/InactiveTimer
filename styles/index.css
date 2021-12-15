@@ -15,20 +15,30 @@ body {
 }
 
 h1 {
-	font-family:"fira-sans", Arial, sans-serif;
-	font-weight:200;
-	font-size: 2.25em;
-	line-height: 1em;
+  font-family: "fira-sans", Arial, sans-serif;
+  font-weight: 200;
+  font-size: 2.25em;
+  line-height: 1em;
 }
 
 h3,
 h4,
-input  {
-	font-family:"proxima-nova", sans-serif, Arial;
-	font-weight:700;
-	letter-spacing: .1em;
+input {
+  font-family: "proxima-nova", sans-serif, Arial;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 pre {
-    font-weight: 1000;
+  font-weight: 1000;
+}
+
+textarea {
+  background-color: #ddd;
+}
+
+label {
+  display: block;
+  color: #ddd;
+  font-size: smaller;
 }
