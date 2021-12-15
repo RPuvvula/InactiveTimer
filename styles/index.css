@@ -1,0 +1,15 @@
+.bodydiv {
+  text-align: center;
+  padding: 0 0;
+}
+
+.header {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #00b4d8;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

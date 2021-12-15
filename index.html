@@ -6,35 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/myScripts.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
     <title>Inactive Timer by Rajani</title>
 </head>
 
 <body>
-    <div>
+    <div class="bodydiv">
+        <div class="header">
+            <h1>Sitting for too long?</h1>
+            <h3>Let me remind you to get up once every 30 mins!</h3>
+        </div>
+        <div style="overflow:auto">
+            <pre id="timeroutput">Start your timer to get started</pre>
+        </div>
+        <div>
+            <form action="">
+                <input id="start" type="button" value="Start timer" onclick="startTimer();">
+                <input id="stop" type="button" value="Stop timer" onclick="stopAllTimers();">
+                <input type="button" value="Enable Notifications" onclick="askNotificationPermission();">
+                <input type="button" value="Clear output" onclick="clearOutput();">
+            </form>
+        </div>
         <p>
-        <h1>Sitting for too long?</h1>
+        <footer>
+            <textarea style="background-color: #ddd;" name="output-console" id="output" cols="30" rows="10"
+                readonly>This is the output console.</textarea>
+        </footer>
         </p>
-        <p>
-        <h3>Let me remind you to get up once every 30 mins!</h3>
-        </p>
     </div>
-    <div style="overflow:auto">
-        <pre id="timeroutput">Start your timer to get started</pre>
-    </div>
-    <div>
-        <form action="">
-            <input id="start" type="button" value="Start timer" onclick="startTimer();">
-            <input id="stop" type="button" value="Stop timer" onclick="stopAllTimers();">
-            <input type="button" value="Enable Notifications" onclick="askNotificationPermission();">
-            <input type="button" value="Clear output" onclick="clearOutput();">
-        </form>
-    </div>
-    <p>
-    <footer>
-        <textarea style="background-color: #ddd;" name="output-console" id="output" cols="30"
-            rows="10" readonly>This is the output console.</textarea>
-    </footer>
-    </p>
 </body>
 
 </html>
