@@ -42,3 +42,8 @@ label {
   color: #ddd;
   font-size: smaller;
 }
+
+.interval {
+    width: 2%;
+    padding-left: 0.5em;
+}
