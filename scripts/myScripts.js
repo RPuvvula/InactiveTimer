@@ -1,34 +1,37 @@
 let timeoutId;
 let countdownId;
 let nextAlertAt;
-let nInterval = 60 * 30; //interval time in seconds
+let nIntervalInMinutes = 30
+let nInterval = 60 * nIntervalInMinutes; //interval time in seconds
 
 function setOutput(outputString) {
     document.querySelector('#timeroutput').textContent = outputString;
 }
 
-function startTimer(nIntervalInMins) {
-    nextAlertAt = setTimerInterval(nIntervalInMins);
+function startTimer(mins) {
+    nextAlertAt = setTimerInterval(mins);
     startCountdown();
 
     timeoutId = setInterval(() => {
         stopAllTimers(false);
         writeToOutputConsole('Shown alert on');
         shownotification("Hey buddy!\nTime to get up and get moving for 2-3 minutes!");
-        startTimer();
+        startTimer(nIntervalInMinutes);
     }, nInterval * 1000);
 
     writeToOutputConsole('Timer (re)started on');
 }
 
-function setTimerInterval(nIntervalInMins) {
-    const parsed = parseInt(nIntervalInMins);
+function setTimerInterval(mins) {
+    const parsed = parseInt(mins);
     if (isNaN(parsed) || parsed < 1) {
-        nInterval = 60 * 30;
+        nIntervalInMinutes = 30;
+        nInterval = 60 * nIntervalInMinutes;
         writeToOutputConsole('Invalid interval value, reverting to the default value', true);
     }
     else {
         nInterval = 60 * parsed;
+        nIntervalInMinutes = parsed;
     }
     return dateAdd(nInterval);
 }
