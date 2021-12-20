@@ -60,6 +60,8 @@ function currentDateTime() {
 }
 
 function startCountdown() {
+    stopAllTimers(false); //clear any previous timers
+
     countdownId = setInterval(() => {
         var datediff = new Date(nextAlertAt - Date.now());
         setOutput(`Next alert in ${datediff.getMinutes()}:${datediff.getSeconds()} seconds at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
@@ -68,7 +70,7 @@ function startCountdown() {
 
 function stopAllTimers(resetTextOutput = true) {
     stopCountDown();
-    clearInterval(timeoutId);
+    stopInactiveAlertTimer();
 
     if (resetTextOutput) {
         setOutput("Timer stopped!");
@@ -78,6 +80,10 @@ function stopAllTimers(resetTextOutput = true) {
 
 function stopCountDown() {
     clearInterval(countdownId);
+}
+
+function stopInactiveAlertTimer() {
+    clearInterval(timeoutId);
 }
 
 function showAlert(message) {
