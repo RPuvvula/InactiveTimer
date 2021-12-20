@@ -30,6 +30,11 @@ a {
     text-decoration: none;
     color: white;
     font-size: small;
+    transition: color .2s ease;
+}
+
+a:hover, a:focus {
+    color: bisque;
 }
 
 h1 {
