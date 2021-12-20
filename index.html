@@ -23,7 +23,7 @@
         </section>
         <div>
             <form action="">
-                <input id="start" type="button" value="Start timer" onclick="startTimer();">
+                <input id="start" type="button" value="Start timer" onclick="startTimer(document.getElementById('interval').value);">
                 <input id="stop" type="button" value="Stop timer" onclick="stopAllTimers();">
                 <input type="button" value="Enable Notifications" onclick="askNotificationPermission();">
                 <input type="button" value="Clear output" onclick="clearOutput();">

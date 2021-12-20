@@ -7,8 +7,8 @@ function setOutput(outputString) {
     document.querySelector('#timeroutput').textContent = outputString;
 }
 
-function startTimer() {
-    nextAlertAt = setTimerInterval();
+function startTimer(nIntervalInMins) {
+    nextAlertAt = setTimerInterval(nIntervalInMins);
     startCountdown();
 
     timeoutId = setInterval(() => {
@@ -21,11 +21,11 @@ function startTimer() {
     writeToOutputConsole('Timer (re)started on');
 }
 
-function setTimerInterval() {
-    const nIntervalInMins = document.getElementById('interval').value;
+function setTimerInterval(nIntervalInMins) {
     const parsed = parseInt(nIntervalInMins);
     if (isNaN(parsed) || parsed < 1) {
         nInterval = 60 * 30;
+        writeToOutputConsole('Invalid interval value, reverting to the default value', true);
     }
     else {
         nInterval = 60 * parsed;
