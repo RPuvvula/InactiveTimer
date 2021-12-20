@@ -1,14 +1,14 @@
 let timeoutId;
 let countdownId;
 let nextAlertAt;
-const nInterval = 60 * 30; //interval time in seconds
+let nInterval = 60 * 30; //interval time in seconds
 
 function setOutput(outputString) {
     document.querySelector('#timeroutput').textContent = outputString;
 }
 
 function startTimer() {
-    nextAlertAt = dateAdd(nInterval);
+    nextAlertAt = setTimerInterval();
     startCountdown();
 
     timeoutId = setInterval(() => {
@@ -19,6 +19,18 @@ function startTimer() {
     }, nInterval * 1000);
 
     writeToOutputConsole('Timer (re)started on');
+}
+
+function setTimerInterval() {
+    const nIntervalInMins = document.getElementById('interval').value;
+    const parsed = parseInt(nIntervalInMins);
+    if (isNaN(parsed) || parsed < 1) {
+        nInterval = 60 * 30;
+    }
+    else {
+        nInterval = 60 * parsed;
+    }
+    return dateAdd(nInterval);
 }
 
 function dateAdd(nSeconds) {
