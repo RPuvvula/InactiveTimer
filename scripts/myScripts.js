@@ -4,8 +4,9 @@ let nextAlertAt;
 let nIntervalInMinutes = 30
 let nInterval = 60 * nIntervalInMinutes; //interval time in seconds
 
-function setOutput(outputString) {
-    document.querySelector('#timeroutput').textContent = outputString;
+function setOutput(outputString, ticker) {
+    document.querySelector('#timeroutput-date').textContent = outputString;
+    document.querySelector('#ticker').textContent = ticker ? ticker : "00:00";
 }
 
 function startTimer(mins) {
@@ -67,7 +68,8 @@ function startCountdown() {
 
     countdownId = setInterval(() => {
         var datediff = new Date(nextAlertAt - Date.now());
-        setOutput(`Next alert in ${datediff.getMinutes()}:${datediff.getSeconds()} seconds at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`);
+
+        setOutput(`Next alert at ${nextAlertAt.toLocaleDateString() + ' ' + nextAlertAt.toLocaleTimeString()}`, `${datediff.getMinutes()}:${datediff.getSeconds()}`);
     }, 1000); //every second
 }
 
