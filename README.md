@@ -1,4 +1,4 @@
-# InactiveTimer
+<h1 align="center" style="color:blue;">InactiveTimer</h1>
 
 Do you spend too much time at your desk? This simple Project reminds you to get out of your chair and move every 30 minutes.
 
